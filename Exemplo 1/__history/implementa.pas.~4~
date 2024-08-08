@@ -1,0 +1,72 @@
+unit implementa;
+
+interface
+
+uses
+  interfaces, classes, System.SysUtils;
+
+type
+  TDocumento = class(TInterfacedObject, IDocumento)
+  private
+    FNome: string;
+    FIdade: Integer;
+    FEndereco: string;
+    FPessoa: IPessoa<IDocumento>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: IDocumento;
+    function Documento: IPessoa<IDocumento>;
+    function InfoDocumento: string;
+    // Métodos para uso interno
+    procedure SetPessoa(Nome: string; Idade: Integer; Endereco: string);
+  end;
+
+implementation
+
+{ TDocumento }
+
+constructor TDocumento.Create;
+begin
+  inherited;
+end;
+
+destructor TDocumento.Destroy;
+begin
+  inherited;
+end;
+
+function TDocumento.Documento: IPessoa<IDocumento>;
+begin
+  // Retorna uma nova instância de TPessoa, passando 'Self' como Parent
+  FPessoa := TPessoa<IDocumento>.New(Self);
+  Result := FPessoa;
+end;
+
+class function TDocumento.New: IDocumento;
+begin
+  Result := Self.Create;
+end;
+
+function TDocumento.InfoDocumento: string;
+begin
+  // Usa os valores configurados pela interface IPessoa
+  Result := Format('Name: %s, Age: %d, Address: %s', [FNome, FIdade, FEndereco]);
+end;
+
+procedure TDocumento.SetPessoa(Nome: string; Idade: Integer; Endereco: string);
+begin
+  FNome := Nome;
+  FIdade := Idade;
+  FEndereco := Endereco;
+end;
+
+{ Método &End de TPessoa chama SetPessoa para atualizar as propriedades no documento }
+function TPessoa<IDocumento>.&End: IDocumento;
+begin
+  TDocumento(FParent).SetPessoa(FNome, FIdade, FEndereco);
+  Result := FParent;
+end;
+
+end.
+

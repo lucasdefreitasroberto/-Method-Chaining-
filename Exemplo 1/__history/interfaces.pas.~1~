@@ -1,0 +1,15 @@
+unit interfaces;
+
+interface
+
+type
+  IPerson = interface
+    function SetName(Value: string): IPerson;
+    function SetAge(Value: Integer): IPerson;
+    function SetAddress(Value: string): IPerson;
+    function Display: string;
+  end;
+
+implementation
+
+end.

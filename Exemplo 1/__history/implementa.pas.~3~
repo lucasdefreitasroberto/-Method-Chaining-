@@ -1,0 +1,49 @@
+unit implementa;
+
+interface
+
+uses
+  interfaces, System.SysUtils;
+
+type
+  TDocumento = class(TInterfacedObject, IDocumento)
+  private
+    constructor Create;
+    destructor Destroy; override;
+  public
+    class function New: IDocumento;
+    function Documento: IPessoa<IDocumento>;
+    function InfoDocumento: string;
+  end;
+
+implementation
+
+{ TDocumento }
+
+constructor TDocumento.Create;
+begin
+
+end;
+
+destructor TDocumento.Destroy;
+begin
+  inherited;
+end;
+
+function TDocumento.Documento: IPessoa<IDocumento>;
+begin
+
+end;
+
+function TDocumento.InfoDocumento: string;
+begin
+  Result := Format('Name: %s, Age: %d, Address: %s', [Nome, Idade, Endereco]);
+end;
+
+class function TDocumento.New: IDocumento;
+begin
+   Result := Self.Create;
+end;
+
+end.
+

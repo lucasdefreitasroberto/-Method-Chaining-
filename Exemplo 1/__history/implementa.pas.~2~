@@ -1,0 +1,17 @@
+unit implementa;
+
+interface
+
+uses
+  interfaces;
+
+type
+  TDocumento = class(TInterfacedObject, IDocumento)
+  private
+  public
+  end;
+
+implementation
+
+end.
+
