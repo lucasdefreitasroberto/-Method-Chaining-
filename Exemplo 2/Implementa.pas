@@ -3,7 +3,7 @@ unit Implementa;
 interface
 
 uses
-  Interfaces, Classes, System.SysUtils;
+  Interfaces, Classes, System.SysUtils, Vcl.Dialogs;
 
 type
   TDocumento = class(TInterfacedObject, IDocumento)
@@ -13,7 +13,7 @@ type
     class function New: IDocumento;
 
     function Pessoa: IPessoa<IDocumento>;
-    function InfoDocumento: string;
+    procedure InfoDocumento;
   end;
 
 implementation
@@ -32,11 +32,11 @@ begin
   Result := FPessoa;
 end;
 
-function TDocumento.InfoDocumento: string;
+procedure TDocumento.InfoDocumento;
 begin
   // Usa os valores configurados pela interface IPessoa
-  Result := Format('Nome: %s, Idade: %d, Endereço: %s', [FPessoa.Nome, FPessoa.Idade, FPessoa.Endereco]);
+  ShowMessage(Format('Nome: %s, Idade: %d, Endereço: %s',
+    [FPessoa.Nome, FPessoa.Idade, FPessoa.Endereco]));
 end;
 
 end.
-

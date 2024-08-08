@@ -9,8 +9,8 @@ uses
 
 type
   TForm1 = class(TForm)
-    AAA: TBitBtn;
-    procedure AAAClick(Sender: TObject);
+    btnVerDocumento: TBitBtn;
+    procedure btnVerDocumentoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +26,7 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.AAAClick(Sender: TObject);
+procedure TForm1.btnVerDocumentoClick(Sender: TObject);
 begin
   var
     Pessoa :=

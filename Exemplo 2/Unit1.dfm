@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 204
-  ClientWidth = 436
+  ClientHeight = 138
+  ClientWidth = 296
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,10 +14,10 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object btnDocumento: TBitBtn
-    Left = 120
-    Top = 64
-    Width = 121
-    Height = 49
+    Left = 52
+    Top = 36
+    Width = 193
+    Height = 65
     Caption = 'Ver Documento'
     TabOrder = 0
     OnClick = btnDocumentoClick

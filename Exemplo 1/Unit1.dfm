@@ -13,13 +13,13 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object AAA: TBitBtn
+  object btnVerDocumento: TBitBtn
     Left = 136
     Top = 64
     Width = 121
     Height = 49
     Caption = 'Visualizar Documento'
     TabOrder = 0
-    OnClick = AAAClick
+    OnClick = btnVerDocumentoClick
   end
 end

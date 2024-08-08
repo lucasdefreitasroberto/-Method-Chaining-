@@ -32,16 +32,14 @@ end;
 
 procedure TForm1.VerDocumento;
 begin
-  // Cria um novo documento e configura a pessoa associada a ele
-
-  // Exibe as informações configuradas
-  ShowMessage(TDocumento.New
-           .Pessoa
-              .Nome('Lucas')
-              .Idade(30)
-              .Endereco('Rua Sebastião Telles da Costa')
-              .&End
-              .InfoDocumento); // Retorna ao contexto de documento
+  TDocumento
+  .New
+   .Pessoa
+    .Nome('Lucas')
+    .Idade(30)
+    .Endereco('Rua Sebastião Telles da Costa')
+    .&End
+    .InfoDocumento;
 end;
 
 end.

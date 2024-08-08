@@ -15,7 +15,7 @@ type
 
   IDocumento = interface
     function Pessoa: IPessoa<IDocumento>;
-    function InfoDocumento: string;
+    procedure InfoDocumento;
   end;
 
 implementation
